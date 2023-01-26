@@ -1,12 +1,19 @@
 T = int(input())
-for l in range(1,T+1):
-    PS = input()
-    while len(PS) > 1:
-        a = PS.replace('()','*')
-        PS = a.replace('*','')
-        if '()' not in PS:
-            break
-    if len(PS) ==0:
+
+for i in range(T):
+    ls = []
+    ps = input()
+    for l in ps:
+        if l == '(':
+            ls.append('(')
+        elif l == ')':
+            if len(ls) >= 1 :
+               ls.pop()
+            elif len(ls) < 1 :
+                ls.append(')')
+                break
+
+    if len(ls) == 0:
         print('YES')
     else:
         print('NO')
