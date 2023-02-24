@@ -1,0 +1,10 @@
+-- 코드를 입력하세요
+SELECT id, name, host_id
+FROM PLACES
+WHERE host_id in (SELECT host_id
+FROM PLACES
+GROUP BY HOST_ID
+HAVING COUNT(HOST_ID) >1
+)
+ORDER BY 1
+
