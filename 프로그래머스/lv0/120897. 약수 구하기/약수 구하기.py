@@ -8,6 +8,6 @@ def solution(n):
         else:
             a +=1
             if n%a ==0:
-                answer.append(n//a)
+                answer.append(a)
             
-    return sorted(answer)
+    return answer
