@@ -3,7 +3,7 @@ def solution(s):
     while s:
         x = s[0] # 첫 글자를 x로 설정
         cnt_x, cnt_other = 0, 0 # x와 x가 아닌 다른 글자들의 횟수 초기화
-        i = 0
+        # i = 0
         for i in range(len(s)):
             if s[i] == x: # 현재 글자가 x인 경우
                 cnt_x += 1
