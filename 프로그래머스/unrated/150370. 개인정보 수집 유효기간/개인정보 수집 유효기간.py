@@ -1,12 +1,12 @@
 def solution(today, terms, privacies):
     answer = []
+    # 년,월,일을 분해해서 일 단위로 통일
     y,m,d = today.split('.')
     today = int(y)*12*28 + int(m)*28 + int(d)
-    # 년월일을 나눠서 일로 정리
-    
-    terms = {i[:1]:int(i[2:])*28 for i in terms}
+
     # 약관 종류를 딕셔너리 형태로 바꿔줌 (약관 종류:유효기간(일 단위))
-    
+    terms = {i[:1]:int(i[2:])*28 for i in terms}
+
     # p : privacies 원소(수집일자)를 '일'단위로 치환
     # c : 약관종류
     for i,p in enumerate(privacies):
